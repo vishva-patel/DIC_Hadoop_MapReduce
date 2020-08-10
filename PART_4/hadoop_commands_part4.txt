@@ -1,0 +1,17 @@
+
+start-all.sh
+
+hadoop fs -mkdir /home
+hadoop fs -mkdir /home/cse587
+hadoop fs -mkdir /home/cse587/project2
+hadoop fs -mkdir /home/cse587/project2/part4
+hadoop fs -mkdir /home/cse587/project2/part4/input
+
+hadoop fs -copyFromLocal /home/cse587/Desktop/project2/part4/input/*.csv /home/cse587/project2/part4/input
+
+
+hadoop jar /home/cse587/hadoop-3.1.2/share/hadoop/tools/lib/hadoop-streaming-3.1.2.jar -jobconf mapred.reduce.tasks=1 -file /home/cse587/Desktop/project2/part4/mapper.py -mapper /home/cse587/Desktop/project2/part4/mapper.py -file /home/cse587/Desktop/project2/part4/reducer.py -reducer /home/cse587/Desktop/project2/part4/reducer.py -input /home/cse587/project2/part4/input -output /home/cse587/project2/part4/output
+
+hadoop fs -get /home/cse587/project2/part4/output/part-00000
+
+stop-all.sh
