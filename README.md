@@ -45,7 +45,7 @@ algorithm to join two datasets using a primary key
 
 ● The assumed primary key is the ‘Employee ID’
 
-### BONUS: K-Nearest Neighbour - 5 Point s
+### BONUS: K-Nearest Neighbour - 5 Points
 
 ● Using the train and test set provided along with the assignment, Implement KNN
 algorithm using MapReduce.
